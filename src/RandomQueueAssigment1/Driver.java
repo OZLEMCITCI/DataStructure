@@ -1,5 +1,13 @@
 package RandomQueueAssigment1;
 public class Driver {
+
+    /** Design and implement a RandomQueue.
+     * This is an implementation of the Queue interface in which
+     * the remove() operation removes an element that is chosen uniformly at random among all
+     * the elements currently in the queue.
+     * (Think of a RandomQueue as a bag in which we can add elements or reach in and blindly remove some random element.)
+     * The add(x) and remove() operations in a RandomQueue should run in constant time per operation.*/
+
     public static void main(String[] args) {
         // Create an object from RandomQueue class
         RandomQueue<Integer> randomQueueObject = new RandomQueue<>();
