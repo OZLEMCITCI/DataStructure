@@ -26,6 +26,7 @@ public class RandomQueue<Type> implements QueueInterface<Type> {
             // call arraycopy function
             System.arraycopy(queue, 0, temporary, 0, total);
 
+
             // assign temporary to queue
             queue = temporary;
         }
