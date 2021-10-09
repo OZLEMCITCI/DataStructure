@@ -1,13 +1,13 @@
 package minqueuestructure;
 
 public class MinQueueDataStructure {
-    private Node front;
-    private Node rear;
+    private Nodek front;
+    private Nodek rear;
     private int queueSize;
-    static class Node implements Comparable<Node>{
+    static class Nodek implements Comparable<Nodek>{
         private int data;
-        private Node next;
-        Node(int data){
+        private Nodek next;
+        Nodek(int data){
             this.data=data;
             next=null;
         }
@@ -17,13 +17,13 @@ public class MinQueueDataStructure {
         public void setData(int d){
             data=d;
         }
-        public Node getNext(){
+        public Nodek getNext(){
             return next;
         }
-        public void setNext(Node newNext){
+        public void setNext(Nodek newNext){
             next=newNext;
         }
-        public int compareTo(Node temp){
+        public int compareTo(Nodek temp){
             if(data==temp.getData()){
                 return 0;
             }
@@ -40,11 +40,11 @@ public class MinQueueDataStructure {
     public void add(int data){
         queueSize++;
         if(front==null){
-            front=new Node(data);
+            front=new Nodek(data);
             rear=front;
             return;
         }
-        Node temp=new Node(data);
+        Nodek temp=new Nodek(data);
         rear.setNext(temp);
         rear=temp;
 
@@ -68,8 +68,8 @@ public class MinQueueDataStructure {
     public int minQueue(){
         if(rear==null)
             return 10000000;
-        Node ptr=front;
-        Node min_=front;
+        Nodek ptr=front;
+        Nodek min_=front;
         while(ptr!=null) {
             if (ptr.compareTo(min_)==1) {
                 min_ = ptr;
