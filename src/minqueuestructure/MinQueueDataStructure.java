@@ -63,6 +63,7 @@ public class MinQueueDataStructure {
         return data;
     }
     public int size(){
+
         return queueSize;
     }
     public int minQueue(){

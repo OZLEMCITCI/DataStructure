@@ -2,6 +2,7 @@ package minquequestructure2;
 
 public class MinimumStack {
     public Element top;
+    private int queueSize=0;
     public MinimumStack() { }
 
     public void push(int x) {
@@ -12,6 +13,7 @@ public class MinimumStack {
             e.next = top;
             top = e;
         }
+        queueSize ++;
     }
 
     public void pop() {
@@ -21,6 +23,7 @@ public class MinimumStack {
         top.next = null;
         top = temp;
 
+        queueSize --;
     }
 
     public int top() {
@@ -35,6 +38,11 @@ public class MinimumStack {
         return top.min;
     }
 
+    public int size(){
+
+        return queueSize;
+    }
+
     public static void main(String args[])           // Driver code to implement the above class.
     {
         MinimumStack m = new MinimumStack();
@@ -47,6 +55,8 @@ public class MinimumStack {
         System.out.println("After Popping");
         System.out.println("The top Elementent is : " + m.top());
         System.out.println("The min Elementent is : " + m.findMin());
+        System.out.println("The size is : " + m.size());
+
     }
 
 
