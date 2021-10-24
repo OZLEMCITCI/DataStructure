@@ -1,27 +1,21 @@
 package treap;
-
-import java.util.Scanner;
-
+// treap main class
 public class TreapMain {
-    public static void main(String[] args)
-    {
-        Scanner scan = new Scanner(System.in);
-        // Creating object of treap class
-        treap tr = new treap();
-
-        int[] arr = new int[]{ 1,2,4,5,6,8,11,13,16};  //Sorted Array
-        for(int i=0; i<arr.length; i++)
-        {
-            tr.add(arr[i]);   // Adding sorted array elements to treap
+    public static void main(String[] args) {
+        // Creating object from treap class
+        Treap tr = new Treap();
+        int[] arr = new int[]{1, 2, 4, 5, 6, 7, 10, 12, 17}; // Sorted Array
+        for (int j : arr) {
+            tr.add(j); // Adding sorted array elements to treap
         }
-
+        // call the functions and print treap with Depth First Traversals
         System.out.print("\nPostorder traversal of treap is: ");
-        tr.postorder();
-        System.out.print("\nPreorder traversal of treap is: ");
-        tr.preorder();
-        System.out.print("\nInorder traversal of treap is: ");
-        tr.inorder();
-        System.out.println("Enter the element you want to search: ");
-        System.out.println("Search result : "+ tr.search_element( scan.nextInt()));
+        tr.postOrder();
+        System.out.print("\n\nPreorder traversal of treap is: ");
+        tr.preOrder();
+        System.out.print("\n\nInorder traversal of treap is: ");
+        tr.inOrder();
+        System.out.println();
     }
 }
+
