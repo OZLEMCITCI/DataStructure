@@ -1,38 +1,41 @@
 package com.permutation;
-
 public class Permutation1 {
-
-//    Write a recursive method to return all possible k permutations of the given String non-zeros number
-//
-//    Sample input : "123" , 2
-//
-//    output : "1-2", "1-3", "2-3", "2-1", "3-1", "3-2"
-    static void printNPermutation(char[] set, int k)
+    //Method to print permutation
+    public static void PermutationCalculator(String set, int p)
     {
-        int n = set.length;
-        permutationHelper(set, "", n, k);
+
+        String [] set1=set.split("");
+        int n = set1.length;
+        //recursive method is being called
+        permutationPrinter(set1, "", n, p);
     }
 
-    static void permutationHelper(char[] set,
-                                  String prefix,
-                                  int n, int k)
-    {
-        if (k == 0)
-        {
-            System.out.println(prefix);
+    //recursive method
+    public static void permutationPrinter(String[] set, String prefix, int n, int p) {
+        //After printing new prefix it stop the recursion and print the number
+        if (p == 0) {
+            for(int i=0;i<prefix.length()-1;i++){
+                //remove if a string has the same elements like 11 22 33
+                if(prefix.charAt(i)==prefix.charAt(i+1)){
+                    return;
+                }
+            }
+            System.out.print(prefix+"-");
+
             return;
         }
-        for (int i = 0; i < n; ++i)
-        {
+        //makes recursive call
+        for (int i = 0; i < n; ++i) {
             String newPrefix = prefix + set[i];
-            permutationHelper(set, newPrefix,
-                    n, k - 1);
+            permutationPrinter(set, newPrefix,
+                    n, p - 1);
         }
     }
+    //Driver class to run the data
     public static void main(String[] args)
     {
-        char[] set1 = {'1', '2','3'};
+        String set1 = "123";
         int k = 2;
-        printNPermutation(set1, k);
+        PermutationCalculator(set1, k);
     }
 }
